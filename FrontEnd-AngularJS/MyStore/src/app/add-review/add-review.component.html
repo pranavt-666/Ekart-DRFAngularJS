@@ -1,0 +1,13 @@
+<div>
+    <form action="" [formGroup]="form" (ngSubmit)="addReviewForm()">
+        <div class="mb-3 mt-5" >
+            <input type="text" placeholder="review" class="form-control" formControlName="description">
+        </div>
+        <div class="mb-3">
+            <input type="text" placeholder="Rating" class="form-control" formControlName="rating">
+        </div>
+        <div class="mb-3">
+            <input type="submit" value="add" class="form-control" [disabled]="form.invalid">
+        </div>
+    </form>
+</div>

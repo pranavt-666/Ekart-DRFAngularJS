@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <h1 class="text-center"> Login </h1>
+            <form action="" class="border  p-4" [formGroup]="form" (ngSubmit)="handleLogin()">
+                <div class="mb-3">
+                    <input type="text" placeholder="Enter Username" class="form-control" formControlName="username">
+                    <div class="form-text text-danger" *ngIf="username && username.invalid && username.touched">Invalid Entry</div>
+                </div>
+                <div class="mb-3">
+                    <input type="password" placeholder="Enter Password" class="form-control" formControlName="password">
+                    <div class="form-text text-danger" *ngIf="password && password.invalid && password.touched">Invalid Entry</div>
+                </div>
+                <div class="mb-3">
+                    <input type="submit" value="login" class="btn btn-info " [disabled]="form.invalid">
+                </div>
+            </form>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>

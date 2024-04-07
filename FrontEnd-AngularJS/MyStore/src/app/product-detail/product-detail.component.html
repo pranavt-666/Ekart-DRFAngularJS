@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+              <!-- {{productDetail|json}} -->
+        <!-- {{productDetail | json}} -->
+                <img src="{{productDetail.product_picture}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{productDetail.title}}</h5>
+                  <p class="card-text">{{productDetail.description}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">{{productDetail.price}}</li>
+                  <li class="list-group-item">{{productDetail.category}}</li>
+                </ul>
+
+                </div>
+        
+              </div>
+              <div class="col-4">
+                <app-product-reviews [pid]="productDetail.id"></app-product-reviews>
+                <app-add-review [proid]="productDetail.id"></app-add-review>
+                <!-- {{}} -->
+            </div>
+        </div>
+
+    </div>

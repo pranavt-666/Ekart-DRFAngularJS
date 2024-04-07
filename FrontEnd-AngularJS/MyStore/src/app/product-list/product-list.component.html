@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <!-- <div class="col-4"></div> -->
+        <div class="col-3 mt-4" *ngFor="let prod of products">
+            <div class="card " style="width: 18rem; ">
+                <!-- <img src="{{prod.image}}" class="card-img-top" alt="..."> -->
+                <img src="{{prod.product_picture}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{prod.category}}</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                </ul>
+                <div class="card-body">
+                  <button  class="btn btn-info" (click)="redirectToProductDetail(prod.id)">Details</button>
+                    </div>
+              </div>
+        </div>
+        <!-- <div class="col-4"></div> -->
+    </div>
+</div>

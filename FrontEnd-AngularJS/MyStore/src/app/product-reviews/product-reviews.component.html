@@ -1,0 +1,18 @@
+<div class="card text-center">
+    <div class="card-header">
+        Reviews
+    </div>
+    <!-- {{reviews | json}} -->
+    <!-- {{reviews.description}} -->
+    <!-- *ngFor="let r of reviews" -->
+    <div class="card-body" *ngFor="let r of reviews">
+      <!-- <h5 class="card-title">{{r}}</h5> -->
+      <!-- {{reviews}} -->
+      <p class="card-text" >{{r.description}} by user <b>{{r.user}}</b> </p>
+      <div class="card-footer text-body-secondary">
+        Rating {{r.rating}}
+      </div>
+      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+    </div>
+
+  </div>
