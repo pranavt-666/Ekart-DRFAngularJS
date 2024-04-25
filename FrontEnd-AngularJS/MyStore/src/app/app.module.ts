@@ -8,7 +8,8 @@ import { LoginComponent } from './login/login.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductReviewsComponent } from './product-reviews/product-reviews.component';
-import { AddReviewComponent } from './add-review/add-review.component'
+import { AddReviewComponent } from './add-review/add-review.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component'
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AddReviewComponent } from './add-review/add-review.component'
     ProductListComponent,
     ProductDetailComponent,
     ProductReviewsComponent,
-    AddReviewComponent
+    AddReviewComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,

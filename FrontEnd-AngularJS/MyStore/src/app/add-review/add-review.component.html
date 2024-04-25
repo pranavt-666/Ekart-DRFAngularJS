@@ -9,5 +9,6 @@
         <div class="mb-3">
             <input type="submit" value="add" class="form-control" [disabled]="form.invalid">
         </div>
+        <div  *ngIf="errorMessage" class=" text-danger">{{ errorMessage }}</div>
     </form>
 </div>

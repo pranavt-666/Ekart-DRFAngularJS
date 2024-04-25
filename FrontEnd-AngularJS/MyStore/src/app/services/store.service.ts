@@ -22,7 +22,27 @@ export class StoreService {
     {"id":10,"pid":6,"comment":"best","user":"anj","rating":5},
     {"id":11,"pid":7,"comnent":"good one","user":"anj","rating":4},
     {"id":12,"pid":7,"comnent":"good","user":"anj","rating":4}]
+  
+  getUserName(){
+    let tkn = localStorage.getItem('token')
+    if (tkn){
 
+    }
+  }
+
+  getCategories(){
+    let tkn = localStorage.getItem('token')
+    if (tkn){
+      return fetch('http://127.0.0.1:8000/categories/',{
+        'method':'GET',
+        'headers':{
+          'content-type':'application/json;charset=UTF-8',
+        }
+      })
+    }
+    else{
+      return new Promise((res, rej)=>rej('error'))}
+  }
 
   getAllProducts(){
     // return fetch(`https://fakestoreapi.com/products/`)
@@ -33,7 +53,8 @@ export class StoreService {
       'headers':{'Content-type': "application/json;charset=UTF-8",
       'Authorization': tkn
     }})}
-    return new Promise((res, rej)=>rej('error'))
+    else{
+    return new Promise((res, rej)=>rej('error'))}
   }
 
   get getAuthToken(){
@@ -41,7 +62,7 @@ export class StoreService {
   }
 
   getProductDetail(id:any){
-    let tkn = localStorage.getItem('token')
+    let tkn = localStorage.getItem('token') 
     if (tkn){
       return fetch(`http://127.0.0.1:8000/products/${id}/`,{
         'method':'GET',

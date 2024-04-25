@@ -7,10 +7,11 @@ import { StoreService } from '../services/store.service';
   templateUrl: './add-review.component.html',
   styleUrl: './add-review.component.css'
 })
+
 export class AddReviewComponent {
+  errorMessage: string | null = null;
   @Input() proid:any;
   constructor(private service:StoreService){
-    
   }
 
   form = new FormGroup(
@@ -22,7 +23,6 @@ export class AddReviewComponent {
   )
   addReviewForm(){
     // console.log(this.form);
-    this.service.addProductReview(this.form.value, this.proid).then((res:any)=>res.json()).then((data:any)=>console.log(data))
-    
+    this.service.addProductReview(this.form.value, this.proid).then((res:any)=>res.json()).then((data:any)=>console.log(data)).catch((er:any)=>this.errorMessage = 'Already added the review')
   }
 }
